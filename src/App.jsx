@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import SwillSDK from 'swill-sdk';
 import ResourceList from './ResourceList';
 
-class App extends Component {
+class App extends React.Component {
   constructor() {
     super();
     this.state = {

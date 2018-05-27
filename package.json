@@ -12,6 +12,7 @@
   "author": "jonrhall",
   "license": "MIT",
   "dependencies": {
+    "prop-types": "^15.6.1",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "swill-sdk": "^1.0.0"
