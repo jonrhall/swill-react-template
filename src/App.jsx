@@ -1,29 +1,28 @@
 import React, { Component } from 'react';
-import ReactDOM from "react-dom";
 import SwillSDK from 'swill-sdk';
-import ResourceList from './ResourceList.jsx'
+import ResourceList from './ResourceList';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       loadingSwill: true,
-      actors: null
+      actors: null,
     };
   }
 
   async componentWillMount() {
-    const sdk = SwillSDK({server:'http://10.0.100.34'});
+    const sdk = SwillSDK({ server: 'http://10.0.100.34' });
     this.setState({
       actors: await sdk.resources.actors.getActors(),
-      loadingSwill: false
+      loadingSwill: false,
     });
   }
 
   render() {
     return (
-      this.state.loadingSwill ? <div> Loading... </div> : 
-      <ResourceList list={this.state.actors}/>
+      this.state.loadingSwill ? <div> Loading... </div> :
+      <ResourceList list={this.state.actors} />
     );
   }
 }

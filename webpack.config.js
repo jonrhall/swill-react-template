@@ -2,15 +2,17 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  entry: [ 'babel-polyfill', `${__dirname}/src/index.js` ],
+  entry: ['babel-polyfill', `${__dirname}/src/index.jsx`],
+  performance: { hints: false },
+  resolve: {
+    extensions: ['.js', '.jsx']
+  },
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: {
-          loader: "babel-loader"
-        }
+        use: ['babel-loader', 'eslint-loader']
       },
       {
         test: /\.html$/,
