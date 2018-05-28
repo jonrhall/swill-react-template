@@ -1,5 +1,6 @@
 import React from 'react';
 import SwillSDK from 'swill-sdk';
+import CssBaseline from '@material-ui/core/CssBaseline';
 import ResourceList from './ResourceList';
 
 class App extends React.Component {
@@ -7,7 +8,7 @@ class App extends React.Component {
     super();
     this.state = {
       loadingSwill: true,
-      actors: null,
+      actors: null
     };
   }
 
@@ -15,14 +16,17 @@ class App extends React.Component {
     const sdk = SwillSDK({ server: 'http://10.0.100.34' });
     this.setState({
       actors: await sdk.resources.actors.getActors(),
-      loadingSwill: false,
+      loadingSwill: false
     });
   }
 
   render() {
     return (
-      this.state.loadingSwill ? <div> Loading... </div> :
-      <ResourceList list={this.state.actors} />
+      <React.Fragment>
+        <CssBaseline />
+        {this.state.loadingSwill ?
+          <div>Loading...</div> : <ResourceList list={this.state.actors} resource="Actor" />}
+      </React.Fragment>
     );
   }
 }

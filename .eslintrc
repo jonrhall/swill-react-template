@@ -1,6 +1,8 @@
 {
   "parser": "babel-eslint",
   "plugins": [ "react" ],
-  "rules": {},
+  "rules": {
+    "comma-dangle": ["error", "never"]
+  },
   "extends": [ "airbnb", "plugin:react/recommended" ]
 }

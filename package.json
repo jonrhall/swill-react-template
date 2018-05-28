@@ -12,6 +12,7 @@
   "author": "jonrhall",
   "license": "MIT",
   "dependencies": {
+    "@material-ui/core": "^1.1.0",
     "prop-types": "^15.6.1",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
