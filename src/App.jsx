@@ -2,6 +2,7 @@ import React from 'react';
 import SwillSDK from 'swill-sdk';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import ResourceList from './ResourceList';
+import config from '../config.json';
 
 class App extends React.Component {
   constructor() {
@@ -13,7 +14,12 @@ class App extends React.Component {
   }
 
   async componentWillMount() {
-    const sdk = SwillSDK({ server: 'http://10.0.100.34' });
+    const setup = {};
+    if (config.server) {
+      setup.server = config.server;
+    }
+
+    const sdk = SwillSDK(setup);
     this.setState({
       actors: await sdk.resources.actors.getActors(),
       loadingSwill: false

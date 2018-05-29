@@ -2,6 +2,7 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: ['babel-polyfill', `${__dirname}/src/index.jsx`],
+  devtool: 'source-map',
   performance: { hints: false },
   resolve: {
     extensions: ['.js', '.jsx']
