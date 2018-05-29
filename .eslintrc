@@ -1,6 +1,7 @@
 {
   "parser": "babel-eslint",
   "plugins": [ "react" ],
+  "env": { "browser": true },
   "rules": {
     "comma-dangle": ["error", "never"]
   },
