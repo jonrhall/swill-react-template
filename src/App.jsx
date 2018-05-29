@@ -16,7 +16,7 @@ class App extends React.Component {
   async componentWillMount() {
     const setup = {};
     if (config.server) {
-      setup.server = config.server;
+      setup.server = `http://${config.server}`;
     }
 
     const sdk = SwillSDK(setup);
